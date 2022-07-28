@@ -537,11 +537,13 @@ color: #666;
 .bookWrapper{
     justify-content: center;
     align-items:center;
-    height:100vh;
+    height:60vh;
     display:flex;
 }
 
 .bookImg{
+    margin-left:auto;
+    margin-right:auto;
     height:35vmin;
     width: 35vmin;
     position:relative;

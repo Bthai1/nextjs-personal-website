@@ -11,6 +11,11 @@
 .bookContainer p{
     color:#E1D8EF;
     text-align: center;
+    font-size:2vh;
+}
+
+.bookContainer h1{
+    font-size:2vw;
 }
 
 .bookContainer ul{
@@ -23,7 +28,7 @@
 
 .bookContainer button{
     border:none;
-    background-color: white;
+    background-color: transparent;
     cursor:pointer;
     margin: 10px;
     transition: transform 0.5s;

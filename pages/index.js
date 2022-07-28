@@ -210,6 +210,57 @@ export default function Home() {
       <section className={utilStyles.bookContainer} id="projectSection">
         <h1 className={utilStyles.headingXl} style={{color:"black",paddingBottom:"10px", textAlign:"center"}}> Projects</h1>
         <div className={utilStyles.bookWrapper}>
+          <Book 
+          frontContentOne={<div>
+            <h1> Hackathon Wake Up Eye Mask</h1>
+            <div className={utilStyles.bookImg}>
+              </div>
+          </div>
+          }
+          backContentOne={<div>
+            <h1> Description</h1>
+            <p> Hackathon first place project. This project was a face mask that used a phone application to turn on blue leds inside the face mask
+              to wake someone up. The application would be used to set the time they would like the leds to turn on.
+            </p>
+            </div>
+          }
+          frontContentTwo={<div>
+            <h1>Technologies</h1>
+            <ul>
+              <li>BLExAR</li>
+              <li>Arduino</li>
+            </ul>
+          </div>
+          }
+          backContentTwo={<div>
+            <h1>Links</h1>
+            <p>None</p>
+          </div>
+          }
+          frontContentThree={<div>
+            <h1>Contributors</h1>
+            <ul>
+            <li>Bryan Thai</li>
+            <li>Yanni Speron</li>
+            <li>Evan Yang</li>
+            <li>Jordan Fannapour</li>
+            </ul>
+          </div>
+          }
+          backContentThree={<div>
+            <Image
+             src= {"/images/hack_ridge_logo_io_white.svg"}
+             alt="Hackridge Logo"
+             layout="fill"
+             >
+            </Image>
+          </div>
+          }
+          >
+            
+          </Book>
+        </div>
+        <div className={utilStyles.bookWrapper}>
         <Book 
         frontContentOne={<div>
           <h1>Melty Blood Game</h1>
@@ -239,7 +290,7 @@ export default function Home() {
         }
         backContentTwo={<div>
           <h1>Links</h1>
-          <p>Check out the game here: <Link href="https://github.com/Bthai1/Melty-Blood-Project"><a>https://github.com/Bthai1/Melty-Blood-Project</a></Link></p>
+          <p>Check out the game <Link href="https://github.com/Bthai1/Melty-Blood-Project"><a>here</a></Link></p>
 
         </div>
         }
