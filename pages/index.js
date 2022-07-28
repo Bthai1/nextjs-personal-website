@@ -1,209 +1,267 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import Layout, { siteTitle } from '../components/layout';
+import Book from '../components/book';
+import utilStyles from '../styles/utils.module.css';
+import Link from 'next/link'
+import Image from 'next/image'
+import { useState } from 'react';
 
 export default function Home() {
+
+  const [imgHover, setImgHover] = useState(false)
+  function takoHover(){
+    setImgHover(!imgHover);
+  }
+
   return (
-    <div className="container">
+    <Layout home>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>{siteTitle}</title>
       </Head>
+      <div className={utilStyles.loadingScreen}>
+        <div className={utilStyles.commandLineImg}>
+          <div className={utilStyles.commandLineHeader}>
+            <div className={utilStyles.cmdIcon}>
+              <Image
+                src= "/images/cmd.png"
+                height="15px"
+                width="20px"
+              />
+            </div>
+            <p>Command Prompt</p>
+            <div className={utilStyles.commandLineHeaderIcons}>
+            <div className={utilStyles.minimizeIcon}>
+            <span></span>
+            </div>
+            <div className={utilStyles.expandIcon}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div className={utilStyles.exitIcon}>
+              <span></span>
+              <span></span>
+            </div>
+            </div>
+          </div>
+          <div className={utilStyles.commandLineBody}>
+            <p className={utilStyles.commandLineContent}> Microsoft Windows [Version 10.0.0.22000.613] 
+            <br/>(c) Microsoft Corporation. All rights reserved. </p>
+            <p className={utilStyles.commandLineContent}>C:\Users\Bryan\Website\nextjs-web{'>'}<span id={utilStyles.typeText}>npm run dev</span> </p>
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+            <div className={utilStyles.commandLineGrouping}>
+            <p className={utilStyles.commandLineContent}>{'>'}dev</p>
+            <p className={utilStyles.commandLineContent}>{'>'}next dev</p>
+            </div>
 
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+            <div className={utilStyles.commandLineGrouping}>
+            <p className={utilStyles.commandLineContent}><span>ready</span> - started server on 0.0.0.0:3000, url: https:/bryanthai.com</p>
+            <p className={utilStyles.commandLineContent}><span>event</span>- compiled client and server successfully in 326 ms (176 modules)</p>
+            <p className={utilStyles.commandLineContent}><span>wait</span> - compiling / (client and server)...</p>
+            <p className={utilStyles.commandLineContent}><span>event</span> - compiled client and server successfully in 243 ms (244 modules)</p>
+            </div>
+          </div>
         </div>
-      </main>
+      </div>
+      <div className={utilStyles.mainBackground}>
+      <section className={utilStyles.headingMd}>
+       
+        <h1 className={`${utilStyles.heading2Xl} ${utilStyles.centerText} ${utilStyles.libreFont} ${utilStyles.textBorder}`}>Bryan Thai</h1>
+        <p className={`${utilStyles.headingLg} ${utilStyles.centerText} ${utilStyles.libreFont} ${utilStyles.textBorder}`}>
+          Computer Engineer? 
+        </p>
+        <ul className={`${utilStyles.limages} ${utilStyles.liRight}`}>
+          <li><Link href="https://github.com/Bthai1">
+          <a className={utilStyles.imageLink}>
+              <Image
+              src="/images/github.png"
+              alt="Picture of the author"
+              width={40}
+              height={40}
+            />
+          </a>
+          </Link>
+          </li>
+          <li><Link href="https://www.linkedin.com/in/bthaiuiuc/">
+          <a className={utilStyles.imageLink}>
+              <Image
+              src="/images/linkedin.png"
+              alt="Picture of the author"
+              width={40}
+              height={40}
+            />
+          </a>
+          </Link>
+          </li>
+        </ul>
+      </section>
+      </div>
+      <section className={utilStyles.aboutContainer} id="aboutSection"> 
+      <div className={utilStyles.aboutLeft}>
+        <h2 className={`${utilStyles.libreFont} ${utilStyles.aboutHeader}`}> <span>About</span> <span className={utilStyles.inaOrange}>Me</span></h2>
+        <p className={`${utilStyles.libreFont} ${utilStyles.aboutP}`}>
+          I'm Bryan Thai, a 20 year-old Vietnamese senior at the University of Illinois at Urbana-Champaign currently going for my bachelors in Computer Engineering. <br/>
+          I love learning new technologies and how it can be implemented in creating an efficient world.
+          Automation and Artificial Intelligence are two of my favorite topics to study. <br/>
+          On my free time, I like to study Japanese, read novels/lightnovels, bouldering, and of course program.
+        </p>
+      </div>
+      <div className={utilStyles.aboutRight}>
+      <div className={utilStyles.rightImg} onMouseOver={takoHover} onMouseOut={takoHover}>
+      <Image
+              src= {imgHover? "/images/takodachi-ina.gif":"/images/takodachi-ina.png"}
+              alt="Picture of the author"
+              layout="fill"
+              objectPosition="50% 50%"
+              sizes="50vw"
+            />
+      </div>
+      </div>
+      </section>
+      <section className={`${utilStyles.timeLineContainer}`} id="workSection">
+        <h1 className={utilStyles.heading2Xl} style={{paddingBottom:"10px", textAlign:"center"}}> Work Experience and Education Time Line</h1>
+        <div className={utilStyles.timeline}>
+          <ul>
+            <li>
+              <div className={utilStyles.timelineContent}>
+                <div className={utilStyles.timelineImg}>
+              <Image
+              src= {"/images/sentinel technologies logo.png"}
+              alt="Sentinel Technologoies logo"
+              width="150px"
+              height="50px"
+              layout="fixed"
+              />
+                </div>
+                <h2 className={utilStyles.date}>May 2022 to August 2022</h2>
+                <h1> Sentinel <br/> Technologies</h1>
+                <p> SOC Analyst Intern</p>
+              </div>
+            </li>
+            <li>
+              <div className={utilStyles.timelineContent}>
+              <div className={utilStyles.timelineImg}>
+              <Image
+              src= {"/images/Illinois_Fighting_Illini_logo.png"}
+              alt="University of Illinois at Urbana-Champaign Logo"
+              width="30px"
+              height="60px"
+              layout="fixed"
+              />
+                </div>
+                <h2 className={utilStyles.date}>August 2021 to Present</h2>
+                <h1> University of Illinois at Urbana-Champaign</h1>
+                <p> Bachelors in Computer Engineering</p>
+              </div>
+            </li>
+            <li>
+              <div className={utilStyles.timelineContent}>
+              <div className={utilStyles.timelineImg}>
+              <Image
+              src= {"/images/sarranowIcon.png"}
+              alt="Sarranow Law Group LLC Logo"
+              width="120px"
+              height="80px"
+              layout="fixed"
+              />
+                </div>
+                <h2 className={utilStyles.date}>May 2021 to August 2021</h2>
+                <h1> Sarranow<br/>Law Group</h1>
+                <p> Software Developer</p>
+              </div>
+            </li>
+            <li>
+              <div className={utilStyles.timelineContent}>
+              <div className={utilStyles.timelineImg}>
+              <Image
+              src= {"/images/Oakton Logo horizontal.png"}
+              alt="Oakton Community College Logo"
+              width="100px"
+              height="50px"
+              layout="fixed"
+              />
+                </div>
+                <h2 className={utilStyles.date}>August 2020 to July 2021</h2>
+                <h1> Oakton <br/>Community College</h1>
+                <p> STEM Scholar</p>
+              </div>
+            </li>
+            <li>
+              <div className={utilStyles.timelineContent}>
+              <div className={utilStyles.timelineImg}>
+              <Image
+              src= {"/images/maineSouthIcon.png"}
+              alt="Maine South Logo"
+              width="60px"
+              height="60px"
+              layout="fixed"
+              />
+                </div>
+                <h2 className={utilStyles.date}>August 2016 to May 2020</h2>
+                <h1> Maine South <br/> Highschool</h1>
+                <p>Math Olympiad</p>
+                <p></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section className={utilStyles.bookContainer} id="projectSection">
+        <h1 className={utilStyles.headingXl} style={{color:"black",paddingBottom:"10px", textAlign:"center"}}> Projects</h1>
+        <div className={utilStyles.bookWrapper}>
+        <Book 
+        frontContentOne={<div>
+          <h1>Melty Blood Game</h1>
+          <div className={utilStyles.bookImg}>
+          <Image
+              src= {"/images/project-img.png"}
+              alt="Melty Blood Level"
+              layout="fill"
+              objectFit='contain'
+              />
+          </div>
+        </div>
+        }
+        backContentOne={<div>
+          <h1>Description</h1>
+          <p>Web browser game implemetation of the fighting game, <Link href="https://store.steampowered.com/app/411370/Melty_Blood_Actress_Again_Current_Code/"><a>Melty Blood Actress Again Current Code</a></Link>, by FRENCH-BREAD.</p>
+          </div>
+        }
+        frontContentTwo={<div>
+          <h1>Technologies</h1>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+        }
+        backContentTwo={<div>
+          <h1>Links</h1>
+          <p>Check out the game here: <Link href="https://github.com/Bthai1/Melty-Blood-Project"><a>https://github.com/Bthai1/Melty-Blood-Project</a></Link></p>
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className="logo" />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+        </div>
+        }
+        frontContentThree={<div>
+          <h1>Contributors</h1>
+            <p> Only Me</p>
+          </div>
         }
 
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+        backContentThree={<div>
+          <Image
+            src= {"/images/arcueid-brunestud.png"}
+            alt="Picture of arcueid-brunestud"
+            layout="fill"
+            />
+
+        </div>
         }
 
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
-  )
+        />
+        </div>
+      </section>
+    </Layout>
+  );
 }

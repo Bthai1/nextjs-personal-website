@@ -1,0 +1,548 @@
+
+.heading2Xl {
+    font-size: 6vmin;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.05rem;
+    margin: .5rem 0;
+    color:#F29A30;
+}
+
+.headingXl {
+font-size: 2rem;
+line-height: 1.3;
+font-weight: 800;
+letter-spacing: -0.05rem;
+margin: 0 0;
+color:#F29A30;
+}
+
+.headingLg {
+font-size: 4vmin;
+line-height: 1.4;
+margin: 0 0;
+color:#F29A30;
+}
+
+.headingMd {
+font-size: 1.2rem;
+line-height: 1.5;
+min-width: 100%;
+}
+
+.textBorder {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.colorInherit {
+color: inherit;
+}
+
+.padding1px {
+padding-top: 1px;
+}
+
+.centerText{
+    text-align: center;
+}
+
+.list {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.listItem {
+margin: 0 0 1.25rem;
+}
+
+.limages{
+    list-style-type: none;
+    display:inline;
+    margin-right:1rem;
+}
+
+.liRight{
+    float:right;
+}
+
+.liLeft{
+    float:Left;
+}
+
+.lightText {
+color: #666;
+}
+
+.libreFont{
+    font-family: 'Libre Baskerville', serif;
+}
+
+.imageLink{
+    display:block;
+    transition: transform .2s;
+    margin: 0 auto;
+    background-color:transparent;
+}
+
+.imageLink:hover {
+    transform: scale(1.5);
+    background-color:transparent;
+}
+
+.mainBackground{
+    height:100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-image: url("/images/ina.png");
+}
+
+.aboutContainer{
+    height:100%;
+    width:100%;
+    display:flex;
+}
+
+.aboutLeft{
+    height:100%;
+    width:50%;
+    box-sizing: border-box; 
+    padding:5%;
+}
+
+.aboutRight{
+    max-height:100%;
+    width:50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.rightImg{
+    position:relative;
+    height:250px;
+    width:250px;
+}
+
+.aboutP{
+    white-space:normal;
+    font-size: 3vmin;
+}
+
+.inaOrange{
+    color:#F29A30;
+}
+
+.aboutHeader{
+    font-size: 4vmin;
+}
+
+.timeLineContainer{
+    background-color: #575068;
+    height:100%;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top:50px;
+    padding-bottom:50px;
+}
+
+.timeline{
+    width:80%;
+    height:auto;
+    max-width:800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline ul{
+    list-style:none;
+} 
+
+.timeline ul li{
+    padding:20px;
+    background-color: #E1D8EF;
+    color: black;
+    border-radius:10px;
+    margin-bottom: 20px;
+}
+
+ /*Didn't know mutliple of one tag had a way to track them. Wasted time on giving each list an id :| */ 
+.timeline ul li:last-child{
+    margin-bottom: 0;
+}
+
+.timelineContent h1{
+    font-size: 25px;
+    font-weight: 500;
+    line-height:30px;
+    margin-bottom:10px;
+    padding-top:0;
+    margin-top:0;
+}
+
+.timeline-content p{
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+.timelineContent .date{
+    font-size:13px;
+    font-weight:300;
+    margin-bottom:10px;
+    letter-spacing:2px;
+}
+
+.loadingScreen{
+    height:100vh;
+    width:100%;
+    position:absolute;
+    display:block;
+    z-index:2000;
+    background-color: navy;
+    animation-name:move;
+    animation-delay: 7s;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    background-image: url("/images/tent wallpaper.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.commandLineImg{
+    position:absolute;
+    display:block;
+    width:70%;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index:2000;
+    background-color: black;
+    height:500px;
+}
+
+.commandLineHeader{
+    background-color:white;
+    width:100%;
+    height:30px;
+    display:flex;
+    position:relative;
+}
+
+.commandLineBody{
+    height:100%;
+    width:100%;
+    background-color: black;
+}
+
+.commandLineContent{
+    margin:0 0 0 0;
+    padding-top: 10px;
+    padding-bottom:10px;
+    color:white;
+    font-family: Consolas, monaco, monospace;
+    font-size:16px;
+    overflow:auto;
+}
+
+#typeText{
+    position:relative;
+    width:max-content;
+}
+
+#typeText::before{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+}
+
+#typeText::before{
+    background-color: black;
+    animation: typewriter var(--typewriterSpeed) steps(11) 1s forwards;
+}
+
+#typeText::after{
+    content:'';
+    width: .600em;
+    height:4px;
+    position:absolute;
+    background:black;
+    animation: typewriter var(--typewriterSpeed) steps(11) 1s forwards,
+    blink var(--blinkSpeed) steps(11) 6;
+    right:0;
+    bottom:0;
+    left:0;
+}
+
+@keyframes blackWhite {  
+    0% { color: black }
+    50% { color: black }
+    51% { color: white }
+    100% { color: white }
+}
+
+@keyframes blackGreen {  
+    0% { color: black }
+    50% { color: black }
+    51% { color: #109a55 }
+    100% { color: #109a55 }
+}
+
+@keyframes blackPurple {  
+    0% { color: black }
+    50% { color: black }
+    51% { color: #9752b0 }
+    100% { color: #9752b0 }
+}
+
+@keyframes blackBlue {  
+    0% { color: black }
+    50% { color: black }
+    51% { color: #1991c3 }
+    100% { color: #1991c3 }
+}
+
+.commandLineGrouping{
+    margin: 15px 0 15px 0;
+}
+
+.commandLineGrouping p {
+    color:black;
+    margin: 0 0 0 0;
+    padding:0 0 0 0;
+    animation-name: blackWhite;  
+    animation-fill-mode:forwards;  
+    animation-delay: var(--commandContentDelay);
+    animation-duration: 2s;
+}
+
+.commandLineGrouping p:nth-child(1) span {
+    color:black;
+    animation-name: blackGreen;  
+    animation-fill-mode:forwards;  
+    animation-delay: var(--commandContentDelay);
+    animation-duration: 2s;
+}
+.commandLineGrouping p:nth-child(2) span {
+    color:black;
+    animation-name: blackPurple;  
+    animation-fill-mode:forwards;  
+    animation-delay: var(--commandContentDelay);
+    animation-duration: 2s;
+}
+.commandLineGrouping p:nth-child(3) span {
+    color:black;
+    animation-name: blackBlue;  
+    animation-fill-mode:forwards;  
+    animation-delay: var(--commandContentDelay);
+    animation-duration: 2s;
+}
+.commandLineGrouping p:nth-child(4) span{
+    color:black;
+    animation-name: blackPurple;  
+    animation-fill-mode:forwards;  
+    animation-delay: var(--commandContentDelay);
+    animation-duration: 2s;
+}
+
+@keyframes typewriter{
+    to{ 
+        left:100%;
+    }
+}
+
+@keyframes blink{
+    0%{
+        background-color: black;
+    }
+    30%{
+        background-color: white;
+    }
+}
+
+.cmdIcon{
+    margin-left:15px;
+    margin-right:5px;
+}
+
+.commandLineHeader p{
+    margin:0 0 0 0;
+    color:black;
+    font-size:16px;
+}
+
+.commandLineHeaderIcons{
+    display:flex;
+    right:0;
+    margin-left:auto;
+}
+
+.minimizeIcon {
+    height:100%;
+    width:30px;
+    display:flex;
+    margin-left:auto;
+    right:40%;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+}
+
+.minimizeIcon span{
+    height: 2.5px;
+    width: 15px;
+    background-color:black;
+}
+
+.expandIcon{
+    height:100%;
+    width:30px;
+    display:flex;
+    margin-left:auto;
+    right:20px;
+    padding: 5px;  
+    position:relative;
+}
+
+.expandIcon span:nth-child(1){
+    position:absolute;
+    top:5.5px;
+    height:15px;
+    width:2px;
+    background-color:black;
+}
+.expandIcon span:nth-child(2){
+    position:absolute;
+    top:5.5px;
+    height:2px;
+    width:15px;
+    background-color:black;
+}
+.expandIcon span:nth-child(3){
+    position:absolute;
+    top:20px;
+    height:2px;
+    width:16px;
+    left:5px;
+    background-color:black;
+}
+.expandIcon span:nth-child(4){
+    position:absolute;
+    top:5.5px;
+    height:15px;
+    left:19px;
+    width:2px;
+    background-color:black;
+}
+
+.exitIcon{
+    height:100%;
+    width:30px;
+    display:flex;
+    padding: 5px;  
+    position:relative;
+}
+
+.exitIcon span:nth-child(1){
+    position:absolute;
+    height:18px;
+    width:2px;
+    transform: rotate(45deg);
+    background-color:black;
+}
+.exitIcon span:nth-child(2){
+    position:absolute;
+    height:18px;
+    width:2px;
+    transform: rotate(-45deg);
+    background-color: black;
+}
+
+@keyframes move{
+    from{top:0px;}
+    to{top:-120%;}
+}
+
+@media only screen and (min-width: 760px) {
+    .timeline::before{
+        content:'';
+        position:absolute;
+        height: 100%;
+        width:2px;
+        left:50%;
+        background-color: gray;;
+    }
+
+    .timeline ul li{
+        width:50%;
+        margin-bottom:50px;
+        position:relative;
+    }
+    .timeline ul li:nth-child(odd){
+        float: left;
+        clear: right;
+        transform:translateX(-50px)
+    }
+    .timeline ul li:nth-child(even){
+        float: right;
+        clear: left;
+        transform:translateX(10px)
+    }
+    .timeline ul li::after{
+        content: '';
+        position:absolute;
+        height:20px;
+        width:20px;
+        background:gray;
+        border-radius: 50%;
+        top:0;
+    }
+    .timeline ul li:nth-child(odd)::after{
+        transform:translate(50%,-50%);
+        right: -30px;
+    }
+    .timeline ul li:nth-child(even)::after{
+        transform:translate(-50%,-50%);
+        left: -30px;
+    }
+    .timeline ul li:hover::after{
+        background-color:#F29A30;
+    }
+    .timelineContent .date{
+        position: absolute;
+        top:-30px;
+        color:#F29A30;
+    }
+    .timelineImg{
+        position:absolute;
+        right:20px;
+        top:10px;
+    }
+}
+
+.bookWrapper{
+    justify-content: center;
+    align-items:center;
+    height:100vh;
+    display:flex;
+}
+
+.bookImg{
+    height:35vmin;
+    width: 35vmin;
+    position:relative;
+}
