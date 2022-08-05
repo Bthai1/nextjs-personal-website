@@ -14,7 +14,7 @@ export default (req, res) => {
     const data = {
         to:'rawgaming3@gmail.com',
         from: 'email@bryanthai.com',
-        subject: 'New web form message!',
+        subject: `${body.name} has messaged with email ${body.email}`,
         test:message,
         html: message.replace(/\r\n/g,'<br>')
     };
