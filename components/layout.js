@@ -95,16 +95,16 @@ export default function Layout({ children, home }) {
         <div className={styles.innerContainer}>
         <form className={styles.form} method="post" onSubmit={handleOnSubmit}>
           <div className={styles.innerDiv}>
-            <label className={styles.innerLabel} form="name">Name *</label>
-            <input className={styles.innerInput} type="text" name="name" />
+            <label className={styles.innerLabel} form="name">Name</label>
+            <input className={styles.innerInput} type="text" name="name" required/>
           </div>
           <div className={styles.innerDiv}>
-            <label className={styles.innerLabel} form="email">Email *</label>
-            <input className={styles.innerInput} type="email" name="email" />
+            <label className={styles.innerLabel} form="email">Email</label>
+            <input className={styles.innerInput} type="email" name="email" required/>
           </div>
           <div className={styles.innerDiv}>
-            <label className={styles.innerLabel} form="message">Message *</label>
-            <textarea className={styles.innerInput} type="text" name="message"/>
+            <label className={styles.innerLabel} form="message">Message</label>
+            <textarea className={styles.innerInput} type="text" name="message" required/>
           </div>
           <div className={styles.innerDiv}>
             <button className={styles.inputButton}>Submit</button>
