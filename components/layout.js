@@ -21,6 +21,11 @@ export default function Layout({ children, home }) {
       body: JSON.stringify(formData)
     })
     console.log(formData)
+    setSubmitted(true)
+    setName('')
+    setEmail('')
+    setQuery('')
+    alert("Email has been sent")
   }
 
   const [showMe, setShowMe] = useState(false);
@@ -32,6 +37,13 @@ export default function Layout({ children, home }) {
   function navBarClick(){
     setDropDown(!showDropDown)
   }
+
+  const[name,setName]=useState("")
+  const[email,setEmail]=useState("")
+  const[query,setQuery]=useState("")
+  const [submitted, setSubmitted] = useState(false)
+
+  
 
   return (
     <div className={styles.container}>
@@ -96,15 +108,15 @@ export default function Layout({ children, home }) {
         <form className={styles.form} method="post" onSubmit={handleOnSubmit}>
           <div className={styles.innerDiv}>
             <label className={styles.innerLabel} form="name">Name</label>
-            <input className={styles.innerInput} type="text" name="name" required/>
+            <input value={name} onChange={(e)=>{setName(e.target.value)}} className={styles.innerInput} type="text" name="name" required/>
           </div>
           <div className={styles.innerDiv}>
             <label className={styles.innerLabel} form="email">Email</label>
-            <input className={styles.innerInput} type="email" name="email" required/>
+            <input value={email} onChange={(e)=>{setEmail(e.target.value)}} className={styles.innerInput} type="email" name="email" required/>
           </div>
           <div className={styles.innerDiv}>
             <label className={styles.innerLabel} form="message">Message</label>
-            <textarea className={styles.innerInput} type="text" name="message" required/>
+            <textarea value={query} onChange={(e)=>{setQuery(e.target.value)}} className={styles.innerInput} type="text" name="message" required/>
           </div>
           <div className={styles.innerDiv}>
             <button className={styles.inputButton}>Submit</button>
