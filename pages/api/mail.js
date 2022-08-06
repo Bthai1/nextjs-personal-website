@@ -10,14 +10,19 @@ export default async (req, res) => {
         Email:${body.email}\r\n
         Message: ${body.message}   
     `;
-    
-    await mail.send({
+
+    try{
+        await mail.send({
         to:'rawgaming3@gmail.com',
         from: 'email@bryanthai.com',
         subject: `${body.name} has messaged with email ${body.email}`,
         test:message,
         html: message.replace(/\r\n/g,'<br>')
     });
+    }
+    catch(e){
+        console.log(e)
+    }
 
     res.status(200).json({status:'OK'});
 }
